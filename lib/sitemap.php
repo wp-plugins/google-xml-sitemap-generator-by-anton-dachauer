@@ -36,10 +36,18 @@ class ADSitemapPlugin {
         return $pages;
     }
 
-    private function getComments() {
-        $comments = get_comments();
+    public function getTags() {
+        $tags = get_tags(array(
+            'hide_empty' => true,
+        ));
 
-        return $comments;
+        return $tags;
+    }
+
+    private function getCategories() {
+        $categories = get_categories();
+
+        return $categories;
     }
 
     private function getXMLHead() {
@@ -105,10 +113,58 @@ class ADSitemapPlugin {
         return $urls;
     }
 
+    public function generateSitemapEntriesForTags() {
+        $tags = $this->getTags();
+
+        $urls = array();
+        if (sizeof($tags) > 0) {
+            foreach ($tags as $key => $tag) {
+                if ($this->_itemsCount < self::MAX_ITEMS_COUNT) {
+                    $item = array(
+                        'loc'               => get_bloginfo('url'). ADgetTagBase(). '/'. $tag->slug,
+                        'lastmod'           => date('Y-m-d H:i'),
+                        'changefreq'        => 'daily',
+                        'priority'          => '0.4',
+                    );
+                    $urls[] = $item;
+
+                    $this->_itemsCount++;
+                }
+            }
+        }
+
+        return $urls;
+    }
+
+    public function generateSitemapEntriesForCategories() {
+        $categories = $this->getCategories();
+
+        $urls = array();
+        if (sizeof($categories) > 0) {
+            foreach ($categories as $key => $category) {
+                if ($this->_itemsCount < self::MAX_ITEMS_COUNT) {
+                    $item = array(
+                        'loc'               => get_bloginfo('url'). '/'. ADgetCategoryBase(). '/'. $category->slug,
+                        'lastmod'           => date('Y-m-d'),
+                        'changefreq'        => 'daily',
+                        'priority'          => '0.4',
+                    );
+                    $urls[] = $item;
+
+                    $this->_itemsCount++;
+                }
+            }
+        }
+
+        return $urls;
+    }
+
     private function generateSitemapEntries() {
         $postUrls = $this->generateSitemapEntriesForPages();
         $pageUrls = $this->generateSitemapEntriesForPosts();
-        return array_merge($postUrls, $pageUrls);
+        $TagUrls = $this->generateSitemapEntriesForTags();
+        $CategoryUrls = $this->generateSitemapEntriesForCategories();
+        return array_merge($postUrls, $pageUrls, $TagUrls, $CategoryUrls);
     }
 
     private function generateSitemapItemsXML() {
@@ -116,8 +172,8 @@ class ADSitemapPlugin {
 
         $xml = "";
         $xml .= "<url>
-                    <loc>/</loc>
-                    <lastmod>". date('Y-m-d H:i'). "</lastmod>
+                    <loc>". get_bloginfo('url'). '/'. "</loc>
+                    <lastmod>". date('Y-m-d'). "</lastmod>
                     <changefreq>hourly</changefreq>
                     <priority>1.0</priority>
                 </url>";

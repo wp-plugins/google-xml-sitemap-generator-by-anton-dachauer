@@ -34,6 +34,7 @@ if (!defined('AD_PLUGIN_DIR_NAME')) {
     define('AD_PLUGIN_DIR_NAME', basename(__DIR__));
 }
 
+require_once __DIR__. DIRECTORY_SEPARATOR. 'wp_helper.php';
 require_once __DIR__. DIRECTORY_SEPARATOR. 'plugin.php';
 
 if (function_exists('ADSetupSitemapPlugin')) {
