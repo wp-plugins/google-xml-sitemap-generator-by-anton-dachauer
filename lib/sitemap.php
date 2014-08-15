@@ -67,7 +67,7 @@ class ADSitemapPlugin {
             foreach ($posts as $key => $post) {
                 if ($post->post_status == 'publish' && $this->_itemsCount < self::MAX_ITEMS_COUNT) {
                     $item = array(
-                        'loc'               => $post->post_name,
+                        'loc'               => get_bloginfo('url'). '/'. $post->post_name,
                         'lastmod'           => $post->post_modified,
                         'changefreq'        => 'daily',
                         'priority'          => '0.6',
@@ -90,7 +90,7 @@ class ADSitemapPlugin {
             foreach ($pages as $key => $page) {
                 if ($page->post_status == 'publish' && $this->_itemsCount < self::MAX_ITEMS_COUNT) {
                     $item = array(
-                        'loc'               => $page->post_name,
+                        'loc'               => get_bloginfo('url'). '/'. $page->post_name,
                         'lastmod'           => $page->post_modified,
                         'changefreq'        => 'daily',
                         'priority'          => '0.8',

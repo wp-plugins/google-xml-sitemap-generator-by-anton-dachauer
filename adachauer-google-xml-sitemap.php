@@ -4,7 +4,7 @@
  * Plugin Name: Google XML Sitemap Generator by Anton Dachauer
  * Plugin URI: http://antondachauer.de/wordpress-plugins/google-xml-sitemap-plugin-fuer-wordpress/
  * Description: Generates a XML Sitemap for Google and other search engines.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Anton Dachauer
  * Author URI: http://antondachauer.de/
  * License: GPL2
