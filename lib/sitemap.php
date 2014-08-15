@@ -76,7 +76,7 @@ class ADSitemapPlugin {
                 if ($post->post_status == 'publish' && $this->_itemsCount < self::MAX_ITEMS_COUNT) {
                     $item = array(
                         'loc'               => get_bloginfo('url'). '/'. $post->post_name,
-                        'lastmod'           => $post->post_modified,
+                        'lastmod'           => date('Y-m-d', strtotime($post->post_modified)),
                         'changefreq'        => 'daily',
                         'priority'          => '0.6',
                     );
@@ -99,7 +99,7 @@ class ADSitemapPlugin {
                 if ($page->post_status == 'publish' && $this->_itemsCount < self::MAX_ITEMS_COUNT) {
                     $item = array(
                         'loc'               => get_bloginfo('url'). '/'. $page->post_name,
-                        'lastmod'           => $page->post_modified,
+                        'lastmod'           => date('Y-m-d', strtotime($page->post_modified)),
                         'changefreq'        => 'daily',
                         'priority'          => '0.8',
                     );
@@ -121,8 +121,8 @@ class ADSitemapPlugin {
             foreach ($tags as $key => $tag) {
                 if ($this->_itemsCount < self::MAX_ITEMS_COUNT) {
                     $item = array(
-                        'loc'               => get_bloginfo('url'). ADgetTagBase(). '/'. $tag->slug,
-                        'lastmod'           => date('Y-m-d H:i'),
+                        'loc'               => get_bloginfo('url'). '/'. ADgetTagBase(). '/'. $tag->slug,
+                        'lastmod'           => date('Y-m-d'),
                         'changefreq'        => 'daily',
                         'priority'          => '0.4',
                     );
