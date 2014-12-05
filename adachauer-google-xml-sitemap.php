@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Plugin Name: Google XML Sitemap Generator by Webworks Nürnberg
+ * Plugin Name: Google XML Sitemap Generator by Webworks Nuernberg
  * Plugin URI: http://www.webworks-nuernberg.de/google-xml-sitemap-generator-fuer-wordpress/
  * Description: Generates a XML Sitemap for Google and other search engines.
  * Version: 1.0.4
- * Author: Webworks Nürnberg
+ * Author: adachauer
  * Author URI: http://www.webworks-nuernberg.de/
  * License: GPL2
  */

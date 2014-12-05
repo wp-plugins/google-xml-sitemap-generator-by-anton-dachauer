@@ -1,6 +1,5 @@
 === Google XML Sitemap Generator by Anton Dachauer ===
 Contributors: antondachauer
-Donate link: http://www.arnebrachhold.de/redir/sitemap-paypal
 Tags: seo, google, sitemaps, google sitemaps, yahoo, msn, ask, live, xml sitemap, xml
 Requires at least: 3.0
 Tested up to: 3.9
@@ -18,7 +17,7 @@ Please report bugs to kontakt@antondachauer.de
 
 Related Links:
 
-* <a href="http://antondachauer.de/wordpress-plugins/google-xml-sitemap-plugin-fuer-wordpress/" title="Google XML Sitemaps Plugin for WordPress">Plugin Homepage</a>
+* <a href="http://www.webworks-nuernberg.de/google-xml-sitemap-generator-fuer-wordpress/" title="Google XML Sitemaps Plugin for WordPress">Plugin Homepage</a>
 
 == Installation ==
 
