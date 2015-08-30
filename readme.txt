@@ -17,7 +17,7 @@ Please report bugs to kontakt@antondachauer.de
 
 Related Links:
 
-* <a href="http://www.webworks-nuernberg.de/google-xml-sitemap-generator-fuer-wordpress/" title="Google XML Sitemaps Plugin for WordPress">Plugin Homepage</a>
+* <a href="http://www.antondachauer.de/2015/08/30/google-xml-sitemap-generator-fuer-wordpress/" title="Google XML Sitemaps Plugin for WordPress">Plugin Homepage</a>
 
 == Installation ==
 
