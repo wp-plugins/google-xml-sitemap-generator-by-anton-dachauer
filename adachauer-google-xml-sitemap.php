@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name: Google XML Sitemap Generator by Webworks Nuernberg
- * Plugin URI: http://www.webworks-nuernberg.de/google-xml-sitemap-generator-fuer-wordpress/
+ * Plugin Name: Google XML Sitemap Generator by Anton Dachauer
+ * Plugin URI: http://www.antondachauer.de/2015/08/30/google-xml-sitemap-generator-fuer-wordpress/
  * Description: Generates a XML Sitemap for Google and other search engines.
  * Version: 1.0.4
  * Author: adachauer
- * Author URI: http://www.webworks-nuernberg.de/
+ * Author URI: http://www.antondachauer.de/
  * License: GPL2
  */
 
